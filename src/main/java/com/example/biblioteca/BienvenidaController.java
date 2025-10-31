@@ -16,5 +16,9 @@ public class BienvenidaController {
 
 
 
+<<<<<<< HEAD
 }
 
+=======
+}
+>>>>>>> release/release1
