@@ -1,22 +1,21 @@
 package com.example.biblioteca.controller;
 
 import com.example.biblioteca.entity.Libro;
-import com.example.biblioteca.service.LibroServideImpl;
+import com.example.biblioteca.service.LibroServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
 
-
+//Esto es un comentario
 @RestController
 @RequestMapping(path = "/api")
-@Service
+
 public class LibroController {
 
     @Autowired
-    private LibroServideImpl libroServiceImpl; // Se inyecta la dependencia
+    private LibroServiceImpl libroServiceImpl; // Se inyecta la dependencia
 
 
     @GetMapping
@@ -28,7 +27,7 @@ public class LibroController {
     @PostMapping
     public void guardarOActualizarLibro(@RequestBody Libro libro) { this.libroServiceImpl.guardarOActualizarLibro(libro); }
 
-    @DeleteMapping("/libroid")
+    @DeleteMapping("/{libroId}")
     public void eliminarLibro(@PathVariable("libroId") Long libroId) { this.libroServiceImpl.eliminarLibro(libroId); }
 
 
