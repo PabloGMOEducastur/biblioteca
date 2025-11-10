@@ -2,11 +2,17 @@ package com.example.biblioteca.service;
 
 import com.example.biblioteca.entity.Libro;
 import com.example.biblioteca.repository.LibroRepository;
-
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
-public class LibroServiceImpl implements LibroService{
+
+@Service
+public class LibroServideImpl implements LibroService {
+
+
+    @Autowired
     private LibroRepository libroRepository;
 
     @Override
@@ -22,12 +28,11 @@ public class LibroServiceImpl implements LibroService{
     @Override
     public void guardarOActualizarLibro(Libro libro) {
         libroRepository.save(libro);
-
     }
 
     @Override
     public void eliminarLibro(Long id) {
         libroRepository.deleteById(id);
-
     }
+
 }
