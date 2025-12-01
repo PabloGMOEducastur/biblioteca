@@ -18,6 +18,7 @@ public class LibroController {
     private LibroServiceImpl libroServiceImpl; // Se inyecta la dependencia
 
 
+
     @GetMapping
     public List<Libro> obtenerTodos() { return this.libroServiceImpl.getLibros(); }
 
@@ -30,5 +31,6 @@ public class LibroController {
     @DeleteMapping("/{libroId}")
     public void eliminarLibro(@PathVariable("libroId") Long libroId) { this.libroServiceImpl.eliminarLibro(libroId); }
 
-
 }
+
+
