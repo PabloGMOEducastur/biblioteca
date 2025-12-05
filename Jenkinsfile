@@ -38,5 +38,11 @@ pipeline {
             }
         }
 
+        stage('Copiar ficheros'){
+            steps{
+                bat 'xcopy /Y ".\\target\\*.jar" ".\\v%VERSION_BACKEND%"'
+            }
+        }
+
     }
 }
