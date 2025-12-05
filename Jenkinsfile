@@ -47,7 +47,7 @@ pipeline {
             succes {bat 'echo "Después de copiar los ficheros correctamente"'}
             failure{bat 'echo "ERROR copiando los ficheros"'}
             always{bat 'echo "Se ejecuta siempre luego del stage Copiar ficheros"'}
-            f
+            
         }
 
     }
