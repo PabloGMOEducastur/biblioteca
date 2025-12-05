@@ -42,13 +42,14 @@ pipeline {
             steps{
                 bat 'xcopy /Y ".\\target\\*.jar" ".\\v%VERSION_BACKEND%"'
             }
-        }
-        post{
-            succes {bat 'echo "Después de copiar los ficheros correctamente"'}
-            failure{bat 'echo "ERROR copiando los ficheros"'}
-            always{bat 'echo "Se ejecuta siempre luego del stage Copiar ficheros"'}
-            
+
+            post {
+                success { bat 'echo "Después de copiar los ficheros correctamente"' }
+                failure { bat 'echo "ERROR copiando los ficheros"' }
+                always  { bat 'echo "Se ejecuta siempre luego del stage Copiar ficheros"' }
+            }
         }
 
     }
 }
+
