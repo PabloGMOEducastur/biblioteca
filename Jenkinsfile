@@ -7,6 +7,12 @@ pipeline{
 
     }
 
+    enviroment(){
+
+    VERSION_BACKEND = "2.0.1"
+
+    }
+
     stages{
         stage('Show message'){
             steps{
@@ -26,13 +32,22 @@ pipeline{
 
                 }
 
-    stage('Maven clean'){
+    stage('Comandos Maven'){
                         steps{
-                            bat 'mvn clean'
+                            bat 'mvn clean package'
 
                         }
 
-                    }
+    }
+
+    stage('Crear directorio')
+
+       steps{
+            bat 'mkdir v%VERSION_BACKEND'
+       }
+
+
+
 
 
 
